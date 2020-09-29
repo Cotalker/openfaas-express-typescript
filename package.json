@@ -5,15 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --outDir ./dist/",
+    "build": "tsc --outDir ./dist/ && cp ./src/index.html ./dist/",
     "upfaas": "tsc --sourceMap false;cp package.json ./express-typescript/package.json;cp package-lock.json ./express-typescript/package-lock.json;faas-cli up -f express-typescript.yml"
   },
   "author": "Eduardo Soto",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "tslint": "^6.0.0",
+    "@types/node": "^13.13.9",
+    "@types/request": "^2.48.5"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "request": "^2.88.2"
   }
 }

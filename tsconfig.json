@@ -2,7 +2,7 @@
     "compilerOptions": {
       "module": "CommonJS",
       "esModuleInterop": true,
-      "target": "es2018",
+      "target": "ES6",
       "lib": ["es2018", "dom"],
       "moduleResolution": "node",
       "sourceMap": true,
