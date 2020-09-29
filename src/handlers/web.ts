@@ -2,7 +2,7 @@ import fs from "fs";
 
 const getHTML = (): Promise<string> => {
     return new Promise((resolve, reject) => {
-        fs.readFile(__dirname + '/../index.html', 'utf8', (err, data) => {
+        fs.readFile(__dirname + '/../static/index.html', 'utf8', (err, data) => {
             if (err) return reject(err);
             return resolve(data);
         });
