@@ -23,7 +23,7 @@ export function init(app) {
     });
 
     app.post('/process', async (req, res) => {
-        res.send(`<html><body>Gracias Amigo! <pre>${JSON.stringify(req.body, null, 2)}</pre></body></html>`);
+        res.send(`<html lang="es"><body>Gracias Amigo! <pre>${JSON.stringify(req.body, null, 2)}</pre></body></html>`);
     })
 
     app.all('/me', async (req, res) => {
