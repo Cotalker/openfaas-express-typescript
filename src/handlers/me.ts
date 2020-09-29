@@ -1,3 +1,6 @@
+/**
+ * THIS IS A SAMPLE FILE
+ */
 import * as api from "../lib/api";
 
 type COTUser = { _id: string, email: string };

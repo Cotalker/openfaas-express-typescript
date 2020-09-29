@@ -1,3 +1,6 @@
+/**
+ * THIS IS A SAMPLE FILE
+ */
 export async function process (req, res) {
     const data = req.body;
 

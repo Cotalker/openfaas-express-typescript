@@ -1,3 +1,6 @@
+/**
+ * THIS IS A SAMPLE FILE
+ */
 import fs from "fs";
 
 const getHTML = (): Promise<string> => {

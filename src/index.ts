@@ -3,7 +3,9 @@ import bodyParser from 'body-parser';
 import * as routes from './routes';
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
 routes.init(app);
 
 app.listen(3300, () => {
