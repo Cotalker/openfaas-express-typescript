@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const getHTML = () => {
+const getHTML = (): Promise<string> => {
     return new Promise((resolve, reject) => {
         fs.readFile(__dirname + '/../index.html', 'utf8', (err, data) => {
             if (err) return reject(err);
@@ -10,6 +10,6 @@ const getHTML = () => {
 }
 
 export async function web (req, res) {
-    const html = await getHTML();
+    const html: string = await getHTML();
     res.send(html);
 }

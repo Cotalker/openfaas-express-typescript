@@ -1,9 +1,11 @@
 import * as api from "../lib/api";
 
-const getMe = async () => {
+type COTUser = { _id: string, email: string };
+
+const getMe = async (): Promise<COTUser> => {
     const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjZhNDIwYmRkMzJkMWIzOWNmYTI5YTAiLCJyb2xlIjoidXNlciIsImNvbXBhbnkiOiI1ZjZhNDIwMTdlMGI5YTAwMDgyYzU5OGUiLCJkYXRlIjoxNjAxMzgwMzg4MjQzLCJpYXQiOjE2MDEzODAzODh9.gUjr4m3l3ZzTaJXa5cD1HuiGKxxhgwQtM68418mQi3s';
     const auth = `Bearer ${token}`;
-    return await api.requestPromise(auth, 'https://cotalker.com/api/v1/users/me');
+    return await api.requestPromise<COTUser>(auth, 'https://cotalker.com/api/v1/users/me');
 }
 
 export async function me (req, res) {
@@ -13,6 +15,9 @@ export async function me (req, res) {
         body: req.body,
         query: req.query,
         headers: req.headers,
-        user,
+        user: {
+            _id: user._id,
+            email: user.email,
+        },
     });
 }

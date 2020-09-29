@@ -5,7 +5,7 @@ const DEBUG = true;
 // This function wrapps request:
 // 1. Adds async support
 // 2. Adds error support for status codes
-export function requestPromise(Authorization, uri, method = 'GET', body = {}) {
+export function requestPromise<T>(Authorization, uri, method = 'GET', body = {}): Promise<T> {
     const config = {
         uri,
         method,
