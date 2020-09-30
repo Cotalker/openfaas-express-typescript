@@ -1,12 +1,11 @@
 // THESE ARE SAMPLE IMPORTS
-// import { me } from './handlers/me';
-// import { web } from  './handlers/web';
-// import { process } from './handlers/process';
+// import { me } from '../handlers/me';
+// import { web } from  '../handlers/web';
+// import { process } from '../handlers/process';
 import express from 'express';
 
-import { handler } from './handlers';
-import { handlerWrap } from './helpers/handler-wrap';
-
+import { handler } from '../handlers';
+import { handlerWrap } from './lib/handler-wrap';
 
 export function init(app: express.Application) {
     app.all('/', handlerWrap(handler));

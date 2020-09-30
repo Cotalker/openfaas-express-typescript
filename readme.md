@@ -12,13 +12,17 @@ NOTE: you can delete `static/index.html`
 ## Run locally
 ```
 npm ci
-npm run build && node dist
+npm run build && node dist/template
+```
+Test:
+```
+curl http://localhost:3300
 ```
 
 ## Upload to Openfaas
 
 ```
 npm ci
-npm run build && npm run upfaas
+npm run build && npm run fass:build && npm run fass:up
 ```
 

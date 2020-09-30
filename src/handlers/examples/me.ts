@@ -14,11 +14,8 @@ const getMe = async (): Promise<COTUser> => {
 
 export async function handler (req: express.Request, res: express.Response) {
     const user = await getMe();
+
     res.json({
-        message: 'Hello World!',
-        body: req.body,
-        query: req.query,
-        headers: req.headers,
         user: {
             _id: user._id,
             email: user.email,
