@@ -1,6 +1,8 @@
-import express from 'express';
 import bodyParser from 'body-parser';
+import express from 'express';
+
 import * as routes from './routes';
+
 const app = express();
 
 // parse application/x-www-form-urlencoded
