@@ -6,7 +6,7 @@
 import { handler } from './handlers/index';
 
 export function init(app) {
-    app.all('/', 'handler');
+    app.all('/', handler);
     
     // Edit with your own routes
     // app.all('/web', web);
