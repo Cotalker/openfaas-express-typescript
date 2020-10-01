@@ -12,9 +12,8 @@ const getMe = async (): Promise<COTUser> => {
     return await requestpromise('https://cotalker.com/api/v1/users/me', { headers, json: true });
 }
 
-export async function handler (req: express.Request, res: express.Response) {
+export async function me (req: express.Request, res: express.Response) {
     const user = await getMe();
-
     res.json({
         user: {
             _id: user._id,

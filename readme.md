@@ -25,4 +25,8 @@ curl http://localhost:3300
 npm ci
 npm run build && npm run faas:build && npm run faas:up
 ```
+Test:
+```
+curl http://localhost:8080/function/myfunction
+```
 
