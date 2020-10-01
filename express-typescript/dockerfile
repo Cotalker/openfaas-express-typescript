@@ -31,7 +31,7 @@ USER app
 
 ENV cgi_headers="true"
 # SET ENTRYPOINT
-ENV fprocess="node ./dist/index.js"
+ENV fprocess="node ./dist/template/index.js"
 ENV mode="http"
 # SET THE PORT HERE BELLOW
 ENV upstream_url="http://127.0.0.1:3300"
