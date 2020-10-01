@@ -23,6 +23,6 @@ curl http://localhost:3300
 
 ```
 npm ci
-npm run build && npm run fass:build && npm run fass:up
+npm run build && npm run faas:build && npm run faas:up
 ```
 
