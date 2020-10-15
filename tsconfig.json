@@ -10,7 +10,8 @@
       "types": [],
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
-      "plugins": []
+      "plugins": [],
+      "strict": true
     },
     "include": [
       "./src/**/*", "./src/custom.d.ts"
