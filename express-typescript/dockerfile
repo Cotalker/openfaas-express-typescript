@@ -18,6 +18,13 @@ RUN mkdir -p /home/app
 WORKDIR /home/app
 COPY package*.json ./
 
+# Registry login
+ARG REGISTRY_USER
+ARG REGISTRY_TOKEN
+ARG REGISTRY_EMAIL
+RUN npx npm-login-noninteractive -r https://npm.pkg.github.com -u ${REGISTRY_USER} -p ${REGISTRY_TOKEN} -e ${REGISTRY_EMAIL}
+RUN npm config set @cotalker:registry https://npm.pkg.github.com
+
 # This ordering means the npm installation is cached for the outer function handler.
 RUN npm ci --production
 # Copy all other source code to work directory

@@ -9,6 +9,20 @@ NOTE: you can delete sample files `handlers/web.ts`, `handlers/me.ts` and `handl
 4. Any asset (non-ts file) create and reference from the `static/` folder  
 NOTE: you can delete `static/index.html`
 
+## Install Cotalker npm packages
+
+Register Cotalker NPM Registry:
+```
+npx npm-login-noninteractive -r https://npm.pkg.github.com -u github_user -p github_token -e github_email
+npm config set @cotalker:registry https://npm.pkg.github.com
+```
+
+Add Cotalker libraries:
+```
+npm install --save @cotalker/lib-cotalker-models
+npm install --save @cotalker/lib-cotalker-api
+```
+
 ## Run locally
 ```
 npm ci
@@ -23,7 +37,8 @@ curl http://localhost:3300
 
 ```
 npm ci
-npm run build && npm run faas:build && npm run faas:up
+npm run build && npm run faas:build
+npm run deploy:[staging | production] -- --build-arg REGISTRY_USER=github_user --build-arg REGISTRY_TOKEN=github_token --build-arg REGISTRY_EMAIL=github_email
 ```
 Test:
 ```

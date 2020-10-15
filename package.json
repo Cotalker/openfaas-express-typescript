@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --outDir ./dist/ && cp -r ./src/handlers/static ./dist/handlers/",
     "faas:build": "tsc --sourceMap false && cp package.json ./express-typescript/package.json && cp package-lock.json ./express-typescript/package-lock.json;",
-    "faas:up": "faas-cli up -f express-typescript.yml"
+    "deploy:staging": "faas-cli up -f express-typescript.yml -n staging-fn",
+    "deploy:production": "faas-cli up -f express-typescript.yml -n openfaas-fn"
   },
   "author": "Eduardo Soto",
   "license": "ISC",
