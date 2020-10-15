@@ -3,10 +3,10 @@ provider:
   name: openfaas
   gateway: http://localhost:8080
 functions:
-  myfunction:
+  eddie0005:
     lang: dockerfile
     handler: ./express-typescript
-    image: 336102453294.dkr.ecr.us-east-1.amazonaws.com/cotfunctions:myfunction
+    image: 336102453294.dkr.ecr.us-east-1.amazonaws.com/cotfunctions:eddie0005
     labels:
       com.openfaas.scale.min: 0
       com.openfaas.scale.max: 1

@@ -1,18 +1,13 @@
 /**
  * THIS IS A SAMPLE FILE
  */
-import fs from "fs";
+import { promises as fs } from "fs";
+import path from "path";
 
-const getHTML = (): Promise<string> => {
-    return new Promise((resolve, reject) => {
-        fs.readFile(__dirname + '/../static/index.html', 'utf8', (err, data) => {
-            if (err) return reject(err);
-            return resolve(data);
-        });
-    });
+const getHTML = async (): Promise<string> => {
+    return await fs.readFile(path.join(__dirname, '..', 'static', 'index.html'), 'utf8');
 }
 
 export async function web (req, res) {
-    const html: string = await getHTML();
-    res.send(html);
+    res.send(await getHTML());
 }
