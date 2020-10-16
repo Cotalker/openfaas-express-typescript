@@ -23,6 +23,9 @@ npm install --save @cotalker/lib-cotalker-models
 npm install --save @cotalker/lib-cotalker-api
 ```
 
+For a list of available Cotalker packages please visit:
+https://github.com/orgs/Cotalker/packages
+
 ## Run locally
 ```
 npm ci
